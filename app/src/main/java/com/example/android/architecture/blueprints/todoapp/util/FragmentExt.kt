@@ -12,12 +12,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ *//*
+
 package com.example.android.architecture.blueprints.todoapp.util
 
+*/
 /**
  * Extension functions for Fragment.
- */
+ *//*
+
 
 import androidx.fragment.app.Fragment
 import com.example.android.architecture.blueprints.todoapp.TodoApplication
@@ -27,3 +30,4 @@ fun Fragment.getViewModelFactory(): ViewModelFactory {
     val repository = (requireContext().applicationContext as TodoApplication).taskRepository
     return ViewModelFactory(repository)
 }
+*/

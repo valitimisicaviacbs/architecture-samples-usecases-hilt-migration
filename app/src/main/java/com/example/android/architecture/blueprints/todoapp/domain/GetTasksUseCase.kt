@@ -9,8 +9,9 @@ import com.example.android.architecture.blueprints.todoapp.tasks.TasksFilterType
 import com.example.android.architecture.blueprints.todoapp.tasks.TasksFilterType.ALL_TASKS
 import com.example.android.architecture.blueprints.todoapp.tasks.TasksFilterType.COMPLETED_TASKS
 import com.example.android.architecture.blueprints.todoapp.util.wrapEspressoIdlingResource
+import javax.inject.Inject
 
-class GetTasksUseCase(
+class GetTasksUseCase @Inject constructor(
     private val tasksRepository: TasksRepository
 ) {
     suspend operator fun invoke(

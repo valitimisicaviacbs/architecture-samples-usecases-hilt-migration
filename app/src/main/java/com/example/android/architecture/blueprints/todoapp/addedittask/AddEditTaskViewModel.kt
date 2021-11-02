@@ -26,12 +26,15 @@ import com.example.android.architecture.blueprints.todoapp.data.Result.Success
 import com.example.android.architecture.blueprints.todoapp.data.Task
 import com.example.android.architecture.blueprints.todoapp.domain.GetTaskUseCase
 import com.example.android.architecture.blueprints.todoapp.domain.SaveTaskUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * ViewModel for the Add/Edit screen.
  */
-class AddEditTaskViewModel(
+@HiltViewModel
+class AddEditTaskViewModel @Inject constructor(
     private val getTaskUseCase: GetTaskUseCase,
     private val saveUseCase: SaveTaskUseCase
 ) : ViewModel() {

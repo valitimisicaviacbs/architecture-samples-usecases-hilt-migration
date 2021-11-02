@@ -19,14 +19,13 @@ import com.example.android.architecture.blueprints.todoapp.data.Result
 import com.example.android.architecture.blueprints.todoapp.data.Result.Error
 import com.example.android.architecture.blueprints.todoapp.data.Result.Success
 import com.example.android.architecture.blueprints.todoapp.data.Task
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.example.android.architecture.blueprints.todoapp.di.qualifier.LocalDataSource
+import com.example.android.architecture.blueprints.todoapp.di.qualifier.RemoteDataSource
+import kotlinx.coroutines.*
 import timber.log.Timber
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentMap
+import javax.inject.Inject
 
 /**
  * Concrete implementation to load tasks from the data sources into a cache.
@@ -34,9 +33,9 @@ import java.util.concurrent.ConcurrentMap
  * To simplify the sample, this repository only uses the local data source only if the remote
  * data source fails. Remote is the source of truth.
  */
-class DefaultTasksRepository(
-    private val tasksRemoteDataSource: TasksDataSource,
-    private val tasksLocalDataSource: TasksDataSource,
+class DefaultTasksRepository @Inject constructor(
+    @RemoteDataSource val tasksRemoteDataSource: TasksDataSource,
+    @LocalDataSource val tasksLocalDataSource: TasksDataSource,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : TasksRepository {
 

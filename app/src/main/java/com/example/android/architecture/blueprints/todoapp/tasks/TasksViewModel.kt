@@ -32,12 +32,16 @@ import com.example.android.architecture.blueprints.todoapp.domain.ClearCompleted
 import com.example.android.architecture.blueprints.todoapp.domain.CompleteTaskUseCase
 import com.example.android.architecture.blueprints.todoapp.domain.GetTasksUseCase
 import com.example.android.architecture.blueprints.todoapp.util.wrapEspressoIdlingResource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * ViewModel for the task list screen.
  */
-class TasksViewModel(
+@HiltViewModel
+class TasksViewModel @Inject constructor(
     private val getTasksUseCase: GetTasksUseCase,
     private val clearCompletedTasksUseCase: ClearCompletedTasksUseCase,
     private val completeTaskUseCase: CompleteTaskUseCase,
