@@ -31,12 +31,15 @@ import com.example.android.architecture.blueprints.todoapp.domain.CompleteTaskUs
 import com.example.android.architecture.blueprints.todoapp.domain.DeleteTaskUseCase
 import com.example.android.architecture.blueprints.todoapp.domain.GetTaskUseCase
 import com.example.android.architecture.blueprints.todoapp.util.wrapEspressoIdlingResource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * ViewModel for the Details screen.
  */
-class TaskDetailViewModel(
+@HiltViewModel
+class TaskDetailViewModel @Inject constructor(
     private val getTaskUseCase: GetTaskUseCase,
     private val deleteTaskUseCase: DeleteTaskUseCase,
     private val completeTaskUseCase: CompleteTaskUseCase,

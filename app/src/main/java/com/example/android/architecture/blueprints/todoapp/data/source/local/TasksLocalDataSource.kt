@@ -23,11 +23,12 @@ import com.example.android.architecture.blueprints.todoapp.data.source.TasksData
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 /**
  * Concrete implementation of a data source as a db.
  */
-class TasksLocalDataSource internal constructor(
+class TasksLocalDataSource @Inject internal constructor(
     private val tasksDao: TasksDao,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : TasksDataSource {

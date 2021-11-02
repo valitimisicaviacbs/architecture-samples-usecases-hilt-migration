@@ -18,7 +18,7 @@ package com.example.android.architecture.blueprints.todoapp.data
 import com.example.android.architecture.blueprints.todoapp.data.Result.Error
 import com.example.android.architecture.blueprints.todoapp.data.Result.Success
 import com.example.android.architecture.blueprints.todoapp.data.source.TasksDataSource
-import java.util.LinkedHashMap
+import java.util.*
 
 /**
  * Implementation of a remote data source with static access to the data for easy testing.
